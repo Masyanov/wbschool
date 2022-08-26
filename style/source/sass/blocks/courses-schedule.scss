@@ -1,0 +1,45 @@
+.courses-schedule {
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 90px;
+  background-color: $color-azure;
+  text-align: center;
+
+  @include vp-767 {
+    margin: 0 auto;
+    margin-bottom: 0;
+    padding-top: 50px;
+    padding-bottom: 53px;
+  }
+
+  .title {
+    margin-bottom: 5px;
+
+    @include vp-767 {
+      padding: 0 24px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 47px 0;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+
+    @include vp-767 {
+      margin-bottom: 20px;
+      padding: 0 24px;
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+
+  .btn {
+    margin-top: 40px;
+
+    @include vp-767 {
+      margin-top: 30px;
+    }
+  }
+}

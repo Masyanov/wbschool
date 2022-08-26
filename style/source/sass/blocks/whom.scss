@@ -1,0 +1,60 @@
+.whom {
+  padding-top: 51px;
+  padding-bottom: 55px;
+
+  @include vp-1439 {
+    padding-top: 53px;
+    padding-bottom: 20px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include vp-1439 {
+      gap: 20px;
+    }
+
+    @include vp-1023 {
+      grid-template-columns: auto;
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 15px;
+  }
+
+  svg {
+    margin-top: 7px;
+    width: 33px;
+    height: 33px;
+
+    fill: transparent;
+
+    @include vp-1023 {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  p {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+
+    @include vp-1023 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+mixin promotion(data, content)
+  section.promotion
+    .container
+      .promotion__wrapper
+        .promotion__text-wrapper
+          +breadcrumbs(data.breadcrumbsList).breadcrumbs--white
+          h1.title.title--white !{content.title}
+          ul.promotion__list
+            each item in content.list
+              li.promotion__item !{item}
+          +btn({text: "Записаться на курс"}).btn--white-blue.btn--padding-11-40.btn--font-size-14.btn--fw-bold.btn--uppercase.promotion__button
+          .promotion__inner
+            .promotion__when
+              +icon(content.when.dataList.icon.iconName, content.when.dataList.icon.iconWidth, content.when.dataList.icon.iconHeight)
+              ul.promotion__data-list
+                each el, index in content.when.dataList.list
+                  li.promotion__data-item= `Цикл ${index + 1}: ${el}`
+            .promotion__when
+              +icon(content.when.address.icon.iconName, content.when.address.icon.iconWidth, content.when.address.icon.iconHeight)
+              p.promotion__text !{content.when.address.text}
+            .promotion__when.promotion__when--time
+              +icon(content.when.time.icon.iconName, content.when.time.icon.iconWidth, content.when.time.icon.iconHeight)
+              p.promotion__text !{content.when.time.text}
+        .promotion__image
+          +picture(content.img.folder, content.img.name, content.img.format, content.img.width, content.img.height, content.img.alt)

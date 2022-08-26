@@ -1,0 +1,150 @@
+.slider {
+  position: relative;
+
+  &__wrapper {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__button {
+    position: absolute;
+    z-index: 5;
+    top: 37%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 64px;
+    height: 64px;
+
+    background-color: $color-default-white;
+
+    border: none;
+    border-radius: 50%;
+    filter: $filter;
+    cursor: pointer;
+    pointer-events: auto;
+
+    svg {
+      width: 14px;
+      height: 26px;
+      stroke: $color-black-pearl;
+      fill: none;
+      transition: stroke $trans-default;
+    }
+
+    &--prev {
+      left: -30px;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--next {
+      right: -30px;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      stroke: $color-red;
+    }
+
+    &:active svg {
+      stroke: $color-sunset-orange;
+    }
+  }
+
+  &__button.swiper-button-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__pagination {
+    position: static;
+
+    &--progressbar {
+      margin-top: 32px;
+      height: 3px;
+
+      background-color: $color-whisper;
+      border-radius: 3px;
+
+      .swiper-pagination-progressbar-fill {
+        background-color: $color-pink-swan;
+        border-radius: 3px;
+      }
+    }
+
+    &--bullets {
+      margin-top: 48px;
+
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+
+        background-color: $color-athens-grey;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: $color-iris-blue;
+      }
+    }
+  }
+
+  &[data-feedback-slider] {
+    overflow: inherit;
+
+    .slider__button {
+      top: 15%;
+    }
+
+    .slider__slide {
+      opacity: 0.3;
+
+      @include vp-1023 {
+        opacity: 1;
+      }
+
+      &.swiper-slide-active,
+      &.swiper-slide-next {
+        opacity: 1;
+      }
+    }
+  }
+
+  &[data-reviews-slider] {
+    .slider__button {
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    .slider__button--next {
+      right: 108px;
+
+      @include vp-1439 {
+        right: 60px;
+      }
+    }
+
+    .slider__button--prev {
+      left: 108px;
+
+      @include vp-1439 {
+        left: 60px;
+      }
+    }
+
+    .slider__pagination {
+      display: none;
+
+      @include vp-1023 {
+        display: block;
+      }
+    }
+  }
+}

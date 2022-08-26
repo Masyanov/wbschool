@@ -1,0 +1,26 @@
+mixin courses-schedule-block()
+  section.courses-schedule
+    .container
+      h2.title.title--h2 Расписание офлайн курсов на&nbsp;2022 год
+      p.courses-schedule__text Онлайн курсы вы&nbsp;можете приобрести и&nbsp;пройти в&nbsp;любой момент
+      .schedule
+        table
+          tr
+            th дата
+            th курс
+            th спикеры
+          each row in scheduleContent.table
+              tr
+                each item in row
+                  td=item.tr
+                  td
+                    a(href="#")=item.tr2
+                  td
+                    p
+                      +picture(item.img.path, item.img.image, item.img.format, item.img.width, item.img.height, item.img.altText)
+                      span=item.tr3
+                    if(item.tr4)
+                      p
+                        +picture(item.img2.path, item.img2.image, item.img2.format, item.img2.width, item.img2.height, item.img2.altText)
+                        span=item.tr4
+      +btn({href: "#",text: "Показать полное расписание"}).btn--white.btn--uppercase.btn--padding-13-30

@@ -1,0 +1,32 @@
+mixin card-individual(individualCourse)
+  - var modificatorForImg = individualCourse.modificator ? `card-individual__img${individualCourse.modificator}` : ""
+  - var modificatorForWrapper = individualCourse.modificator ? `card-individual__wrapper${individualCourse.modificator}` : ""
+  section.card-individual
+    h2.title.title--h2.title--center.card-individual__title !{individualCourse.title}
+    .card-individual__wrapper-card
+      .card-individual__wrapper(class=modificatorForWrapper)
+        p.card-individual__about-programm !{individualCourse.aboutProgramm}
+        .card-individual__wrapper-column
+          ul.card-individual__column-descriptions
+            each item in individualCourse.listDescription
+              li.card-individual__item
+                p.card-individual__item-title !{item.title}
+                ul.card-individual__descripton-list
+                  each line in item.description
+                    li.card-individual__descripton !{line}
+          ul.card-individual__column-specifications
+            each item in individualCourse.listSpecification
+              li.card-individual__item
+                p.card-individual__item-title !{item.specification}
+                p.card-individual__item-specification !{item.value}
+                if item.paymentFlag
+                  +btn({href: "", text: 'оплатить', isExternal: true,}).btn--iris-blue.btn--uppercase.btn--fw-bold.btn--small.card-individual__btn(data-open-modal="payment")
+      .card-individual__img(class=modificatorForImg)
+        +picture(
+                individualCourse.img.folder,
+                individualCourse.img.name,
+                individualCourse.img.format,
+                individualCourse.img.width,
+                individualCourse.img.height,
+                individualCourse.img.alt,
+                individualCourse.img.size)

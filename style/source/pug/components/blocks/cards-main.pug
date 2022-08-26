@@ -1,0 +1,93 @@
+-
+  const cardsContent = [
+      {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-1",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        title: "40 идей для stories на каждый день в блоге врача-стоматолога",
+        description: "Чтобы удержать текущих и привлечь новых подписчиков — потенциальных клиентов",
+      },
+      {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-2",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        title: "Краткая инструкция: как раскрутить клинику в инстаграме",
+        description: "Чтобы удержать текущих и привлечь новых подписчиков — потенциальных клиентов",
+      },
+      {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-3",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        title: "Первичная консультация на детском приеме: время, объем и нюансы",
+        description: "Что ожидают родители, которые пришли на прием к стоматологу с ребенком?",
+      },
+      {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-2",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        title: "Краткая инструкция: как раскрутить клинику в инстаграме",
+        description: "Чтобы удержать текущих и привлечь новых подписчиков — потенциальных клиентов",
+      },
+      {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-3",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        title: "Первичная консультация на детском приеме: время, объем и нюансы",
+        description: "Что ожидают родители, которые пришли на прием к стоматологу с ребенком?",
+      },
+      {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-1",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        title: "40 идей для stories на каждый день в блоге врача-стоматолога",
+        description: "Чтобы удержать текущих и привлечь новых подписчиков — потенциальных клиентов",
+      },
+    ]
+
+mixin cards-main
+  section.cards-main
+    .container
+      h2.title.title--h2 Бесплатные материалы
+      .cards-main__bg.cards-main__bg--left
+        +icon("great-bear", "1452", "973")
+      .cards-main__bg.cards-main__bg--right
+        +icon("little-bear", "1000", "700")
+      +cards-grid(cardsContent)
+      .cards-main__btn
+        +btn({href: "#", text: "Все бесплатные материалы"}).btn.btn--light-gray.btn--uppercase.btn--padding-13-30

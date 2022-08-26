@@ -1,0 +1,30 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Индивидуально обучение для врачей" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = 2 //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const contentDescription = "Индивидуальное обучение у спикеров учебного центра «Белая медведица»"
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +individual-intro({
+      breadcrumbsList: [
+        {
+          text: 'Индивидуальное обучение',
+          href: '#'
+        }
+      ]
+    }, individual)
+
+block modals
+  +modal("modal--payment")(data-modal="payment")
+    +modal-payment()
+  +modal("modal--cashless-payment")(data-modal="cashless-payment")
+    +modal-cashless-payment()

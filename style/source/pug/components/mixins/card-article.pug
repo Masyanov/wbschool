@@ -1,0 +1,15 @@
+mixin card-article(data)
+  article.card-article&attributes(attributes)(class=data.mod ? `card-article--${data.mod}` : null)
+    .card-article__img-wrapper
+      +picture("content", data.img.name, data.img.format, data.img.width, data.img.height, data.img.alt, data.img.size)
+    .card-article__text-content
+      a(href=data.link)
+        h3.title.card-article__title!=data.title
+      p.card-article__description!=data.description
+      if(data.authors)
+        ul.card-article__authors
+          each item in data.authors
+            li.card-article__author
+              +picture("content", item.img.name, data.img.format, item.img.width, item.img.height, item.img.alt)
+              p.card-article__author-name!=item.name
+      +link({href: data.href, text: data.linkText, iconName: "arrow", iconWidth: 16, iconHeight: 9}).link.link--blue.link--uppercase.link--letter-spacing.card-article__link

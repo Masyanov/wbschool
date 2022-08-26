@@ -1,0 +1,11 @@
+mixin individual-intro(data, individualCoursesList)
+  section.individual
+    .container.container--no-padding-mobile-767
+      .individual__bg.individual__bg--left
+        +icon("great-bear", "1152", "772")
+      .individual__bg.individual__bg--right
+        +icon("little-bear2", "665", "1029")
+      +breadcrumbs(data.breadcrumbsList).individual__breadcrumbs
+      h1.title.title--h1.title--center.individual__title офис-курсы
+      each item in individualCoursesList
+        +card-individual(item)

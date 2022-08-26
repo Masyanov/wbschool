@@ -1,0 +1,421 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "UI-kit"
+  -
+    const cardData = {
+      link: "#",
+      img: {
+        name: "course-1",
+        width: 360,
+        height: 200,
+        alt: "",
+      },
+      format: "Oнлайн",
+      start: "Cтарт в любой момент",
+      title: "Мастер имплантологии, 1-й цикл",
+      description: "Это уникальный курс, который закроет все вопросы, связанные с&nbsp;имплантацией",
+      speakers: [
+        {
+          name: "Иван<br>Курдюмов",
+          img: {
+            name: "image-author-4",
+            width: 48,
+            height: 48,
+            alt: "Фото спикера",
+          },
+        },
+      ],
+    }
+
+  -
+    const cardContent = {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-1",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        authors: [
+        {
+          name: "Варвара<br>Висленко",
+          img: {
+            name: "image-author-1",
+            width: 48,
+            height: 48,
+            alt: "Фото спикера",
+          },
+        },
+      ],
+        title: "40 идей для stories на каждый день в блоге врача-стоматолога",
+        description: "Чтобы удержать текущих и привлечь новых подписчиков — потенциальных клиентов",
+    }
+
+  -
+    const cardContent2 = {
+        href: "#",
+        linkText: "Подробнее",
+        img: {
+          name: "image-article-1",
+          format: "jpg",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        title: "40 идей для stories на каждый день в блоге врача-стоматолога",
+        description: "Чтобы удержать текущих и привлечь новых подписчиков — потенциальных клиентов",
+      }
+
+  -
+    const dataVideo = [
+      {
+        title: "Cуть видео",
+        comment: "Комментарий к&nbsp;видео. Каждый день на&nbsp;меня подписываются новые люди. Часть из&nbsp;них&nbsp;&mdash; мои будущие клиенты, которые хотят лечиться именно у&nbsp;меня.",
+        video: {
+          youtubeId: "NpEaa2P7qZI",
+          title: "видео",
+        },
+        imgData: {
+          img: {
+          path: "content",
+          image: "preview-video",
+          format: "jpg",
+          width: "960",
+          height: "536",
+          altText: "Обложка для видео",
+          },
+        },
+      },
+      {
+        title: "Cуть видео",
+        comment: "Комментарий к&nbsp;видео. Каждый день на&nbsp;меня подписываются новые люди. Часть из&nbsp;них&nbsp;&mdash; мои будущие клиенты, которые хотят лечиться именно у&nbsp;меня.",
+        video: {
+          youtubeId: "NpEaa2P7qZI",
+          title: "видео",
+        },
+        imgData: {
+          img: {
+          path: "content",
+          image: "preview-video",
+          format: "jpg",
+          width: "960",
+          height: "536",
+          altText: "Обложка для видео",
+          },
+        },
+      },
+    ]
+
+  -
+    const introVideo = {
+      img: {
+        path: "content",
+        image: "intro-video-cover",
+        format: "jpg",
+        width: "740",
+        height: "752",
+        altText: "обложка для видео",
+      }
+    }
+
+block main
+  style.
+    main {
+      margin-top: 100px;
+    }
+
+    main > .container {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .components-backwards {
+      color: #ffffff;
+      display: inline-block;
+    }
+
+    .components-backwards span:first-child {
+      position: relative;
+      top: -3px;
+
+      display: inline-block;
+      margin-right: 15px;
+
+      font-size: 16px;
+      line-height: 24px;
+      vertical-align: top;
+
+      transform: scale(2);
+    }
+
+    .components-backwards span:last-child {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .components-backwards + h1 {
+      margin-bottom: 0;
+    }
+
+    .container > section {
+      padding: 70px 0 0 0;
+    }
+
+    section > h2 {
+      margin: 0 0 20px 0;
+      padding: 20px 0;
+      position: relative;
+      color: #ffffff;
+    }
+
+    section > h2::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100vw;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background-color: #2c39f2;
+      z-index: -1;
+    }
+
+    .dark-ui {
+      position: relative;
+      color: #a6a6a6;
+      padding: 20px 0;
+    }
+
+    .dark-ui::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100vw;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background-color: #0F2D57;
+      z-index: -1;
+    }
+
+    .dark-ui--gray {
+      color: #000;
+    }
+
+    .dark-ui--gray::before {
+      background-color: #EFF4F5;
+    }
+
+    .header-ui {
+      background-color: #2c39f2;
+      padding: 20px 0;
+      position: fixed;
+      width: 100vw;
+      z-index: 99;
+      box-shadow: 0 0 3px 1px #000000;
+    }
+
+    .header-ui__nav {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 20px 80px;
+    }
+
+    .header-ui__inner-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 30px;
+    }
+
+    .header-ui__inner-link {
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+
+    .header-ui__inner-link:hover,
+    .header-ui__inner-link.is-active {
+      color: #ff1553;
+    }
+
+    .header-ui__inner-link.is-inactive {
+      color: #ffffff;
+      pointer-events: none;
+    }
+
+    .element-container {
+      max-width: 360px
+    }
+
+  header.header-ui
+    nav.header-ui__nav.container
+      a.components-backwards(href="sitemap.html")
+        span &larr;
+        span вернуться на разводящую
+      ul.header-ui__inner-list
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#logo", data-navigation-link) Logo
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#cards", data-navigation-link) Cards
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#titles", data-navigation-link) Titles
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#buttons", data-navigation-link) Buttons
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#breadcrumbs", data-navigation-link) Breadcrumbs
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#pagination", data-navigation-link) Pagination
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#social-links", data-navigation-link) Social links
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#video-slider", data-navigation-link) Video slider
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#video", data-navigation-link) Video
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#modals", data-navigation-link) Modals
+
+  main
+    .container
+      h1 UI-kit
+      section(id="logo")
+        h2 Logo
+        +logo(currentUrl, "header").logo--header
+        code
+          pre +logo(currentUrl, "header").logo--header
+        div.dark-ui
+          +logo(currentUrl, "footer").logo--footer
+          code
+            pre +logo(currentUrl, "footer").logo--footer
+
+      section(id="cards")
+        h2 Карточки
+        h3 Карточка курса
+        p Класс компонента card-course
+        div.element-container
+          +card-course(cardData)
+
+        h3 Карточка статьи с указанием автора
+        p Класс компонента card-article
+        div.element-container
+          +card-article(cardContent)
+
+        h3 Карточка статьи
+        p Класс компонента card-article
+        div.element-container
+          +card-article(cardContent2)
+
+      section(id="titles")
+        h2 Titles
+        h1.title.title--h1.title--center Заголовок 1 уровня
+        p Пример вызова
+        code
+          pre  h1.title.title--h1.title--center
+
+        h2.title.title--h2.title--center.title--white Заголовок 2 уровня
+        p Пример вызова
+        code
+          pre h2.title.title--h2.title--center.title--white
+
+        h3.title.title--h3.title--center Заголовок 3 уровня
+        p Пример вызова
+        code
+          pre h2.title.title--h3.title--center
+
+      section(id="buttons")
+        h2 Buttons
+        +btn({text: "Записаться"}).btn--blue.btn--uppercase.btn--fw-medium
+        p Пример вызова
+        code
+          pre +btn({text: "Записаться"}).btn--blue.btn--uppercase.btn--fw-medium
+        +btn({text: "оплатить"}).btn--iris-blue.btn--uppercase.btn--fw-bold.btn--small
+        p Пример вызова
+        code
+          pre +btn({text: "оплатить"}).btn--iris-blue.btn--uppercase.btn--fw-bold.btn--small
+        +btn({sLink: true, href: "#", text: "вконтакте", iconName: "icon-vkontakte", iconWidth: 28, iconHeight: 16}).btn--dark-blue.btn--uppercase
+        p Пример вызова
+        code
+          pre +btn({sLink: true, href: "#", text: "вконтакте", iconName: "icon-vkontakte", iconWidth: 28, iconHeight: 16}).btn--dark-blue.btn--uppercase
+        +btn({text: "материалы"}).btn--light-gray.btn--uppercase
+        p Пример вызова
+        code
+          pre +btn({text: "материалы"}).btn--light-gray.btn--uppercase
+        div.dark-ui.dark-ui--gray
+          +btn({text: "Посмотреть", iconName: "arrow", iconWidth: 22, iconHeight: 22}).btn--white.btn--uppercase
+          p Пример вызова
+          code
+            pre +btn({text: "Посмотреть", iconName: "arrow", iconWidth: 22, iconHeight: 22}).btn--white.btn--uppercase
+          +btn({text: "Записаться на курс"}).btn--white-blue.btn--uppercase
+          p Пример вызова
+          code
+            pre +btn({text: "Записаться на курс"}).btn--white-blue.btn--uppercase
+        +link({href: "#", text: "Подробнее", iconName: "arrow", iconWidth: 22, iconHeight: 22}).link--blue.link--letter-spacing.link--uppercase
+        p Пример вызова
+        code
+          pre +link({href: "#", text: "Подробнее", iconName: "arrow", iconWidth: 22, iconHeight: 22}).link--blue.link--letter-spacing.link--uppercase
+        +link({href: "#", text: "Подробнее"}).link--blue.link--decoration
+        p Пример вызова
+        code
+          pre +link({href: "#", text: "Подробнее"}).link--blue.link--decoration
+        div.dark-ui
+          +link({href: "#", text: "Мастер имплантологии"}).link--light
+          p Пример вызова
+          code
+            pre +link({href: "#", text: "Мастер имплантологии"}).link--light
+
+      section(id="breadcrumbs")
+        h2 Breadcrumbs
+        +breadcrumbs([
+        {
+          text: 'Страница 1',
+          href: '#'
+        },
+        {
+          text: 'Страница 2',
+          href: '#'
+        }
+      ])
+        p Пример вызова
+        code
+          pre  +breadcrumbs([{text: 'Страница 1', href: '#' }, {text: 'Страница 2',href: '#'}])
+
+      section(id="pagination")
+        h2 Pagination
+        p
+          +pagination()
+
+      section(id="social-links")
+        h2 Social links
+        +social-links(socialLinks)
+        p Пример вызова
+        code
+          pre +social-links(socialLinks)
+
+      section(id="video-slider")
+        h2 Слайдер видео
+        p Класс компонента video-slider
+        +video-slider(dataVideo)
+      section(id="video")
+        h2 Видео
+        p Класс компонента video
+        +video({youtubeId: "5Rq2x637z38", title: "видео"}, introVideo)
+
+      section(id="modals")
+        h2 Modals
+        p Модальное окно - Оплата курса
+          +btn({text: "modal-payment", content: "modal-payment",})(data-open-modal="payment")
+        p Модальное окно - Данные для безналичной оплаты
+          +btn({text: "modal-cashless-payment", content: "modal-cashless-payment",})(data-open-modal="cashless-payment")
+
+  script
+    include ../../js/inline/ui-kit.js
+
+block modals
+  +modal("modal--payment")(data-modal="payment")
+    +modal-payment()
+  +modal("modal--cashless-payment")(data-modal="cashless-payment")
+    +modal-cashless-payment()

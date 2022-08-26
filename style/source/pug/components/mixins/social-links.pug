@@ -1,0 +1,5 @@
+mixin social-links(data)
+  ul(class!=attributes.class).social-links
+    each item in data
+      li.social-links__item
+        +link({href: item.href, text: item.text, isExternal: true, }).link--uppercase.link--letter-spacing

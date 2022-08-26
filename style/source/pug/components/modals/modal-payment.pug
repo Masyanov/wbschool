@@ -1,0 +1,72 @@
+mixin modal-payment()
+  .modal-payment
+    .modal-payment__wrapper(data-validate)
+      h2.modal-payment__title.title.title--h11 Оплата курса
+      form(action="#/" method="post")
+        .modal-payment__input-wrapper
+          +custom-input({
+            inputLabel: "Имя",
+            inputType: "text",
+            inputId: "name",
+            inputName: "user-name-has-valid-value",
+            inputValue: "",
+            inputPlaceholder: "",
+            minlength: "2",
+            inputError: "Введите имя",
+          }).modal-payment__custom-input(data-validate-type="text")
+          +custom-input({
+            inputLabel: "Фамилия",
+            inputType: "text",
+            inputId: "surname",
+            inputName: "user-surname-has-valid-value",
+            inputValue: "",
+            inputPlaceholder: "",
+            minlength: "2",
+            inputError: "Введите фамилию",
+          }).modal-payment__custom-input(data-validate-type="text")
+          +custom-input({
+            inputLabel: "Эл.почта",
+            inputType: "email",
+            inputId: "email",
+            inputName: "user-email-has-valid-value",
+            inputValue: "",
+            inputPlaceholder: "",
+            inputError: "Введите эл.почту",
+          }).modal-payment__custom-input(data-validate-type="email")
+          +custom-input({
+            inputLabel: "Телефон",
+            inputType: "phone",
+            inputId: "phone",
+            inputName: "user-phone-has-valid-value",
+            inputValue: "",
+            inputPlaceholder: "",
+            inputError: "Введите телефон",
+          }).modal-payment__custom-input(data-validate-type="phone")
+          +custom-toggle({
+            inputLabel: "Я согласен (а) на обработку <a href=\"#\">персональных данных</a>&nbsp;и&nbsp;получение рекламной рассылки в соответствии с&nbsp;<a href=\"#\">положением об обработке персональных данных</a>",
+            inputType: "checkbox",
+            inputId: "checkbox",
+            inputName: "checkbox",
+          }).custom-toggle--checkbox.modal-payment__confidential(data-validate-type="checkbox")
+          fieldset.modal-payment__type-payment(data-validate-type="toggle-group").toggle-group
+            legend Способ оплаты
+            +custom-toggle({
+              inputLabel: "Банковской картой через Робокассу",
+              inputType: "radio",
+              inputId: "radio-1",
+              inputName: "radio-group-2",
+              inputChecked: "checked",
+            }).custom-toggle--radio.modal-payment__custom-toggle
+            +custom-toggle({
+              inputLabel: "Безналичный расчет (для юр. лиц)",
+              inputType: "radio",
+              inputId: "radio-2",
+              inputName: "radio-group-2",
+            }).custom-toggle--radio.modal-payment__custom-toggle(data-open-modal="cashless-payment")
+          +btn({
+            href: "",
+            text: "Оплатить",
+            type: "submit",
+            content: true,
+          }).modal-payment__btn.btn.btn--blue.btn--uppercase
+

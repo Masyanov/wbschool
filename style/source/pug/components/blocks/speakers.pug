@@ -1,0 +1,30 @@
+mixin speakers(data, speakersList)
+  section.speakers
+    .container
+      .speakers__bg.speakers__bg--left
+        +icon("great-bear", "1152", "772")
+      .speakers__bg.speakers__bg--right
+        +icon("little-bear2", "665", "1029")
+      +breadcrumbs(data.breadcrumbsList)
+      h1.title.title--h1.title--center.speakers__title Спикеры
+      .speakers__wrapper
+        each speaker in speakersList
+          section.speakers__card.card-speaker
+            .card-speaker__img
+              +picture(speaker.img.folder, speaker.img.name, speaker.img.format, speaker.img.width, speaker.img.height, speaker.img.alt, 1023)
+            h2.card-speaker__name !{speaker.name}
+            p.card-speaker__position !{speaker.seniorPosition}
+            ul.card-speaker__specializations.card-speaker__border-bottom
+              li.card-speaker__specialization
+                each specialization in speaker.specializations
+                  p !{specialization}
+              li !{speaker.category}
+              li !{speaker.experience}
+              li.card-speaker__specialization
+                each otherSpecialization in speaker.otherSpecializations
+                  p !{otherSpecialization}
+            h3.card-speaker__courses-title  Автор курсов и&nbsp;мастер-классов
+            ul.card-speaker__courses.card-speaker__border-bottom
+              each course in speaker.coursesList
+                li !{course}
+            +link({href: "#", text: "узнать больше"}).link--blue.link--letter-spacing.link--uppercase.card-speaker__link

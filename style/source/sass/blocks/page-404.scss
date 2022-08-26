@@ -1,0 +1,144 @@
+.page-404 {
+  padding-top: 38px;
+  padding-bottom: 77px;
+
+  @include vp-767 {
+    padding-top: 37px;
+    padding-bottom: 70px;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 48px;
+    margin-left: 200px;
+
+    @include vp-1279 {
+      margin-left: 100px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 22px;
+      margin-left: 0;
+    }
+  }
+
+  &__message {
+    display: inline-block;
+
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 16px;
+    font-family: $ff-roboto;
+    color: $color-iris-blue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @include vp-767 {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+
+  .title--h9 {
+    margin-bottom: 10px;
+
+    @include vp-767 {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__info {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+    line-height: 32px;
+    font-family: $ff-pt-serif;
+
+    @include vp-767 {
+      margin-bottom: 0;
+
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+
+  &__info--mobile {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__info--mobile + &__info--mobile {
+    @include vp-767 {
+      margin-top: 12px;
+    }
+  }
+
+  &__info--desktop {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $color-dodger-blue;
+
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 2px;
+  }
+
+  &__list {
+    display: grid;
+    max-width: 1160px;
+    margin: 0 auto 57px;
+    padding: 0;
+
+    list-style: none;
+
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    grid-template-columns: repeat(3, 360px);
+
+    @include vp-1279 {
+      max-width: 760px;
+
+      grid-template-columns: repeat(2, 360px);
+    }
+
+    @include vp-1023 {
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      grid-template-columns: repeat(2, minmax(310px, 360px));
+    }
+
+    @include vp-767 {
+      max-width: 360px;
+      margin-bottom: 40px;
+
+      grid-column-gap: 0;
+      grid-row-gap: 20px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+
+    @include vp-767 {
+      .btn {
+        width: 100%;
+        max-width: 360px;
+      }
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}

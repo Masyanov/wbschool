@@ -1,0 +1,48 @@
+.map {
+  width: 100%;
+  min-height: 528px;
+  height: 100%;
+}
+
+.map__placemark {
+  position: relative;
+  top: -68px;
+  left: -34px;
+  width: 60px;
+  height: 68px;
+}
+
+.map__placemark-text {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: 1010;
+  padding-top: 3px;
+  padding-right: 6px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  text-align: left;
+  white-space: normal;
+  background-color: $color-white-opacity09;
+  border-radius: 6px;
+}
+
+.map__placemark-title {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+.map__placemark-content {
+  font-size: 13px;
+  line-height: 14px;
+  color: $color-dim-gray;
+}
+
+.map__placemark-rating {
+  color: $color-comet;
+}

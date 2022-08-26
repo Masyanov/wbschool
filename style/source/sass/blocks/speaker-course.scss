@@ -1,0 +1,132 @@
+.speaker-course {
+  position: relative;
+  padding-top: 85px;
+  padding-bottom: 88px;
+
+  color: $color-default-white;
+  background-color: $color-tangaroa;
+
+  @include vp-1023 {
+    padding-top: 50px;
+    padding-bottom: 53px;
+  }
+
+  &__bg {
+    position: absolute;
+    top: -108px;
+    left: 31%;
+
+    @include vp-767 {
+      display: none;
+    }
+
+    svg {
+      width: 936px;
+      height: 1012px;
+      fill: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @include vp-1023 {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__speaker-name {
+    margin: 0;
+    margin-bottom: 53px;
+    font-family: $ff-pt-sans;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @include vp-1023 {
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 37px;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 2;
+
+    @include vp-1023 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    color: $color-iris-blue;
+
+    @include vp-1023 {
+      grid-template-columns: none;
+      row-gap: 15px;
+    }
+  }
+
+  &__description-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__description-text {
+    max-width: 400px;
+    margin: 0;
+    margin-bottom: 24px;
+
+    font-family: $ff-pt-serif;
+    font-style: italic;
+    font-size: 24px;
+    line-height: 36px;
+
+    @include vp-1023 {
+      max-width: 100%;
+
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  ul {
+    padding: 26px 0 0;
+    margin: 0;
+    list-style: none;
+
+    font-size: 20px;
+    line-height: 28px;
+
+    color: $color-whisper;
+    border-top: 2px solid rgba($color-default-white, 0.3);
+
+    @include vp-1023 {
+      padding-top: 22px;
+
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+
+  li {
+    margin-bottom: 12px;
+
+    @include vp-1023 {
+      margin-bottom: 8px;
+    }
+  }
+}

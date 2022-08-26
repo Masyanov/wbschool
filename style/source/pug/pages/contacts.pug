@@ -1,0 +1,25 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Контакты учебного центра «Белая медведица»" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const currentUrlContacts = 0 //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const contentDescription = "☎ +7 (812) 605-78-08. Адрес: Россия, Санкт-Петербург, 26-я линия В.О., д. 15, корп. 2, БЦ «Биржа». Ст. м. Василеостровская"
+  - const map = "true"
+block main
+  main.main--flex
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +contacts({
+      breadcrumbsList: [
+        {
+          text: 'Контакты',
+          href: '#'
+        }
+      ]
+    }, contacts)

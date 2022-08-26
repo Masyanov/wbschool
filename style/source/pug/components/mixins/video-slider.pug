@@ -1,0 +1,13 @@
+mixin video-slider(data)
+  section.video-slider.swiper&attributes(attributes)
+    ul.video-slider__list.swiper-wrapper
+      each item in data
+        li.video-slider__item.swiper-slide
+          h2.title.video-slider__title!=item.title
+          +video(item.video, item.imgData)
+          p.video-slider__comment!=item.comment
+    .video-slider__buttons
+      button.video-slider__button.video-slider__button--prev
+        +icon("arrow-slider", 12, 26)
+      button.video-slider__button.video-slider__button--next
+        +icon("arrow-slider", 12, 26)

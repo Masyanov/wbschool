@@ -1,0 +1,102 @@
+mixin article(data, content)
+  section.article
+    .container
+      +breadcrumbs(data.breadcrumbsList)
+      .article__wrapper
+        .article__author
+          +picture("content", content.author.img, "jpg", 56, 56, "Фото автора статьи")
+          .article__author-text
+            p.article__author-name!=content.author.name
+            time(datetime= content.date.datetime)!=content.date.name
+        .article__content
+          h1!=content.title
+          .article__lead
+            p!=content.lead
+          figure.article__img-wrapper
+            .article__img
+              +picture("content", content.img.name, "jpg", 960, 536, content.img.alt)
+            figcaption!=content.img.caption
+          each item in content.text
+            if typeof(item) === "string"
+              p!=item
+            else if item.h2
+              h2!=item.h2
+            else if item.h3
+              h3!=item.h3
+            else
+              .article__accent-text
+                p!=item.accent
+
+        h2.title.article__video-title Видеообзор / h2
+        figure.article__video-wrapper
+          .article__video-block
+            +video(content.videoData, content.imgData)
+          figcaption.article__video-caption Подпись к изображению может быть длинной и занимать две строки
+
+        h2 Списки и таблица
+        p Маркированный список:
+        ul
+          each item in content.markedList
+            li!=item
+        p Нумерованный список:
+        ol
+          each item in content.markedList
+            li!=item
+
+        table
+          caption Услуги и цены / заголовок таблицы
+          thead
+            tr
+              each item in content.table.head
+                th(scope="col")!=item
+          tbody
+            each item in content.table.body
+              if typeof(item) === "string"
+                tr
+                  th(colspan="3" scope="colgroup")!=item
+              else
+                tr
+                  each data in item
+                    td!=data
+    //.container.container--no-padding-mobile
+      .article__video
+        h2.title.article__video-title Видеообзор / h2
+        .article__video-wrapper
+          +video(content.videoData, content.imgData)
+        p.article__video-caption Подпись к изображению может быть длинной и занимать две строки
+    //.container
+      .article__wrapper.article__wrapper--table
+        h2 Списки и таблица
+        p Маркированный список:
+        ul
+          each item in content.markedList
+            li!=item
+        p Нумерованный список:
+        ol
+          each item in content.markedList
+            li!=item
+
+        table
+          caption Услуги и цены / заголовок таблицы
+          thead
+            tr
+              each item in content.table.head
+                th(scope="col")!=item
+          tbody
+            each item in content.table.body
+              if typeof(item) === "string"
+                tr
+                  th(colspan="3" scope="colgroup")!=item
+              else
+                tr
+                  each data in item
+                    td!=data
+    section.article__recommend
+      .container.article__recommend-slider.swiper
+        h2.title.article__recommend-title Рекомендуем статьи
+        +cards-grid(content.cards, "swiper-slide").article__recommend-cards.swiper-wrapper
+        .article__recommend-buttons
+          button.article__recommend-button.article__recommend-button--prev
+            +icon("arrow-slider", 12, 26)
+          button.article__recommend-button.article__recommend-button--next
+            +icon("arrow-slider", 12, 26)

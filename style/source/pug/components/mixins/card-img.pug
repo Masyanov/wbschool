@@ -1,0 +1,16 @@
+mixin card-img(data, mod)
+  each item in data
+    li.card-img(class=mod ? `card-img--${mod}` : null)
+      .card-img__img
+        +picture(
+                item.img.path,
+                item.img.image,
+                item.img.format,
+                item.img.width,
+                item.img.height,
+                item.img.altText,
+                item.img.size
+                )
+      p.card-img__info
+        span.card-img__text!=item.highlight
+        | !{item.text}

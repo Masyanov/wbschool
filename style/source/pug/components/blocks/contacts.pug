@@ -1,0 +1,42 @@
+mixin contacts(data, contacts)
+  section.page-contacts
+    .container
+      .page-contacts__bg
+        +icon("great-bear", "1152", "772")
+      +breadcrumbs(data.breadcrumbsList).breadcrumbs--margin
+      h1.title.title--h1.title--center.page-contacts__title !{contacts.pageTitle}
+      div.page-contacts__wrapper(itemscope itemtype = "https://schema.org/EducationalOrganization")
+        .page-contacts__column1
+          .page-contacts__item
+            h2.page-contacts__subtitle  !{contacts.address.title}
+            p(itemprop="address" itemscope itemtype="https://schema.org/PostalAddress")
+              span(itemprop="addressLocality") !{contacts.address.city}
+              span=", "
+              span(itemprop="streetAddress") !{contacts.address.address}
+              span , !{contacts.address.businessСenter}
+          p.page-contacts__item.page-contacts__description !{contacts.address.description}
+        .page-contacts__column2
+          .page-contacts__item
+            h2.page-contacts__subtitle  !{contacts.phone.title}
+            +link({href: `tel:${contacts.phone.content}`, text: contacts.phone.text})(itemprop="telephone" content=contacts.phone.content)
+          .page-contacts__item
+            h2.page-contacts__subtitle  !{contacts.email.title}
+            +link({href: `mailto:${contacts.email.email}`, text: contacts.email.email})(itemprop="email").link--decoration.link--blue
+        .page-contacts__column2
+          .page-contacts__item
+            h2.page-contacts__subtitle  !{contacts.schedule.title}
+            span(itemprop="openingHours" content=contacts.schedule.attribute) !{contacts.schedule.text}
+
+    section.page-contacts__container-bottom
+
+      h2.visually-hidden Стоматологическая клиника Белая медведица на карте
+      .page-contacts__map-container
+        +map
+
+      .page-contacts__photo
+        +picture(contacts.clinicImg.folder,
+          contacts.clinicImg.name,
+          contacts.clinicImg.format,
+          contacts.clinicImg.width,
+          contacts.clinicImg.height,
+          contacts.clinicImg.alt)

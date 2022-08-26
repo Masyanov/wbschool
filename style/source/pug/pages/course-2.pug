@@ -1,0 +1,33 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Курс" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--border-none"
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = 0 //- для остальных страниц пишем пустую строку или индекс активного headerLinksBottom
+
+block main
+  main
+    +promotion({
+      breadcrumbsList: [
+        {
+          text: 'Курсы',
+          href: '#',
+        },
+        {
+          text: 'Восстановление зубов all on 4, all on 6',
+          href: '#',
+        },
+      ]
+    }, promotion)
+    +whom(whom)
+    +invitation(invitation)
+    +program-course(programCourse2)
+    +schedule-course(scheduleСourse)
+    +speaker-course(speakerCourse)
+    +course-booking(courseBooking)
+    +reviews(reviews)
+    +feedback(feedback)

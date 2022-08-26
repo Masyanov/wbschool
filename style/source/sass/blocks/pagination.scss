@@ -1,0 +1,65 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  padding: 53px 0 93px;
+  position: relative;
+  left: -37px;
+
+  @include vp-1439 {
+    left: 5px;
+  }
+
+  @include vp-1023 {
+    padding: 11px 0 60px;
+    left: -12px;
+  }
+
+  &__item {
+    margin: 0 2px 0;
+    display: inline-block;
+    padding: 7px 15px 3px;
+    width: 40px;
+    height: 36px;
+    border-radius: 4px;
+    font-family: $ff-pt-sans;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-default-black;
+    transition: all $trans-default;
+
+    &:hover,
+    &:focus {
+      background: #f7f7f7;
+    }
+
+    &:active {
+      background: $color-azure;
+    }
+
+    &--active {
+      background: $color-azure;
+      cursor: default;
+
+      &:hover,
+      &:focus {
+        background: $color-azure;
+      }
+    }
+
+    &--last {
+      display: block;
+      width: auto;
+      height: 36px;
+      padding: 7px 12px 3px;
+
+      @include vp-1023 {
+        padding: 7px 10px 3px;
+      }
+    }
+  }
+}

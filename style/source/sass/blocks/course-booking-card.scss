@@ -1,0 +1,83 @@
+.course-booking-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @include vp-767 {
+    grid-template-columns: none;
+    gap: 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__item {
+    padding: 29px 29px 33px;
+
+    background-color: $color-azure;
+    border-radius: 4px;
+
+    @include vp-1023 {
+      padding-bottom: 40px;
+      border-radius: 0;
+    }
+
+    &.dark {
+      color: $color-default-white;
+      background-color: $color-sapphire;
+
+      .course-booking-card__title {
+        color: $color-default-white;
+      }
+    }
+
+    .btn {
+      padding: 7px 25px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $ff-roboto;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    color: $color-dim-gray;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    font-family: $ff-pt-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__wrap {
+    margin-bottom: 22px;
+  }
+
+  &__inner {
+    font-family: $ff-pt-serif;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &__seats-left,
+  &__new-price {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &__old-price {
+    line-height: 28px;
+    text-decoration-line: line-through;
+  }
+}

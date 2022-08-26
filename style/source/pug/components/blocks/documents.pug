@@ -1,0 +1,35 @@
+-
+  const documentsList = [
+    {
+      text: "Публичная оферта на оказание консультационно-образовательных платных услуг",
+      linkText: "ознакомиться",
+      href:"#",
+    },
+    {
+      text: "Согласие на обработку персональных данных, разрешенных субъектом персональных данных для распространения",
+      linkText: "ознакомиться",
+      href:"#",
+    },
+    {
+      text: "Положение об обработке персональных данных",
+      linkText: "ознакомиться",
+      href:"#",
+    },
+    {
+      text: "Пользовательское соглашение",
+      linkText: "ознакомиться",
+      href:"#",
+    }
+  ]
+
+mixin documents()
+  section.documents
+    .container
+      h2.title.title--h13.title--center Регулирующие документы
+      ul.documents__list
+        each item in documentsList
+          li.documents__item
+            p.documents__text=item.text
+            +link({href: item.href, text: item.linkText, iconName: "arrow", iconWidth: 12, iconHeight: 9}).link.link--blue.link--uppercase.link--letter-spacing
+      .documents__btn
+        +btn({href: "#",text: "На главную"}).btn--light-gray.btn--uppercase.btn--padding-13-74

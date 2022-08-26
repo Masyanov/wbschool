@@ -1,0 +1,26 @@
+mixin logo(currentUrl, location)
+  if (currentUrl === "index.html")
+    if (location === "header")
+      //- lighthouse снимает 10 баллов SEO за <a> без href
+      span(class!=attributes.class).logo
+        picture
+          source(type='image/webp', media='(max-width: 1439px)', srcset='img/svg/logo-mobile.svg')
+          source(type='image/webp', srcset='img/svg/logo-desktop.svg')
+          source(media='(max-width: 1439px)', srcset='img/svg/logo-mobile.svg')
+          img(src='img/svg/logo-desktop.svg', width='289', height='55', alt='Логотип')
+
+    else if (location === "footer")
+      span(class!=attributes.class).logo
+        +icon("logo-footer", 128, 38)
+
+  else
+    if (location === "header")
+      a.logo(class!=attributes.class, href="index.html", aria-label="Переход на главную")
+        picture
+          source(type='image/webp', media='(max-width: 1439px)', srcset='img/svg/logo-mobile.svg')
+          source(type='image/webp', srcset='img/svg/logo-desktop.svg')
+          source(media='(max-width: 1439px)', srcset='img/svg/logo-mobile.svg')
+          img(src='img/svg/logo-desktop.svg', width='289', height='55', alt='Логотип')
+    else if (location === "footer")
+      a.logo(class!=attributes.class, href="index.html", aria-label="Перейти на главную")
+        +icon("logo-footer", 128, 38)

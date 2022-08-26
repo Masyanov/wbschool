@@ -1,0 +1,9 @@
+mixin invitation(data)
+  section.invitation
+    .container.container--big-padding.container--no-padding-mobile
+      +icon("big-dipper", 1451, 972).invitation__bg
+      h2.title.title--center.title--h2 Приглашение на курс
+      +video({youtubeId: "ft2X_gXN-Ec", title: "видео"}, data).video--max
+      .invitation__text-block
+        each item in data.text
+          p !{item}

@@ -1,0 +1,142 @@
+.speaker {
+  position: relative;
+  padding-top: 9px;
+
+  &__bg {
+    position: absolute;
+    display: block;
+    left: 677px;
+    top: 82px;
+    transform: rotate(9deg);
+    pointer-events: none;
+
+    @include vp-1439 {
+      left: 45%;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+
+    svg {
+      width: 1451px;
+      height: 972px;
+      fill: none;
+    }
+  }
+
+  &__video {
+    padding-top: 78px;
+
+    @include vp-1023 {
+      padding-top: 41px;
+    }
+  }
+
+  &__courses {
+    position: relative;
+    padding-top: 85px;
+    padding-bottom: 55px;
+    overflow: hidden;
+
+    @include vp-1439 {
+      padding-top: 81px;
+    }
+
+    @include vp-1023 {
+      padding-top: 48px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__courses-bg {
+    position: absolute;
+    display: block;
+    left: 50px;
+    top: 130px;
+    transform: rotate(8deg);
+    pointer-events: none;
+
+    @include vp-1439 {
+      left: -16%;
+      top: 128px;
+    }
+
+    @include vp-767 {
+      left: -111%;
+      top: 85px;
+    }
+
+    svg {
+      width: 1451px;
+      height: 972px;
+      fill: none;
+    }
+  }
+
+  &__courses-title {
+    text-align: center;
+
+    @include vp-1023 {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__courses-description {
+    margin: 0;
+    margin-bottom: 56px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+
+    @include vp-1439 {
+      margin-bottom: 59px;
+    }
+
+    @include vp-1023 {
+      margin-bottom: 26px;
+      padding: 0 20px;
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+
+  &__courses-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    @include vp-767 {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__courses-item {
+    max-width: 360px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+
+    @include vp-1023 {
+      width: calc((100% - 40px) / 2);
+    }
+
+    @include vp-767 {
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 23px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}

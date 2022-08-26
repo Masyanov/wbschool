@@ -1,0 +1,9 @@
+mixin courses-block(data)
+  ul.courses-block
+    each item in data
+      if(item.isBig)
+        li.courses-block__item(class=item.mod ? `courses-block__item--${item.mod}` : null)
+          +card-course(item)
+      else
+        li.courses-block__item
+          +card-course(item)

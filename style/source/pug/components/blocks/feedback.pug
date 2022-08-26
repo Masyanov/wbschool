@@ -1,0 +1,23 @@
+mixin feedback(data)
+  section.feedback
+    .container
+      h2.title.title--h2.title--center Отзывы участников
+      .feedback__slider.swiper.slider(data-feedback-slider)
+        .feedback__buttons.slider__buttons
+          button.slider__button.slider__button--prev
+            +icon("arrow-slider", 12, 26)
+          button.slider__button.slider__button--next
+            +icon("arrow-slider", 12, 26)
+        ul.feedback__list.swiper-wrapper.slider__wrapper
+          each item in data
+            li.feedback__item.swiper-slide.slider__slide
+              p.feedback__text !{item.text}
+              .feedback__wrapper
+                +picture(item.author.img.folder, item.author.img.name, item.author.img.format, item.author.img.width, item.author.img.height, item.author.img.alt)
+                .feedback__inner
+                  p.feedback__name !{item.author.name}
+                  +link({href: "#", text: item.author.nickname}).link--blue.feedback__nickname
+        .feedback__pagination.slider__pagination.slider__pagination--progressbar.swiper-pagination
+        +btn({text: "Показать Еще отзывы"}).btn--light-gray.btn--uppercase.feedback__more
+      .feedback__links
+        +btn({href: "#", text: "Хочу так же!"}).btn--iris-blue.btn--uppercase.btn--fw-bold.btn--padding-11-40.feedback__link

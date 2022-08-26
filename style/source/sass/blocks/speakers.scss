@@ -1,0 +1,232 @@
+.speakers {
+  margin-bottom: 86px;
+  padding-top: 10px;
+  font-family: $ff-pt-sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+
+  @include vp-1023 {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.speakers__title {
+  margin-bottom: 3px;
+
+  @include vp-1023 {
+    margin-bottom: 0;
+  }
+}
+
+.speakers__wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 36px;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  @include vp-1439 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 44px;
+    margin-bottom: 57px;
+  }
+}
+
+.card-speaker {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include vp-1023 {
+    max-width: 312px;
+  }
+}
+
+.card-speaker__name {
+  margin-top: 28px;
+  margin-bottom: 13px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  @include vp-1023 {
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+}
+
+.card-speaker__position {
+  margin: 0;
+  margin-bottom: 4px;
+  font-family: $ff-pt-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+
+  @include vp-1023 {
+    margin-bottom: 0;
+    font-size: 17px;
+    line-height: 24px;
+  }
+}
+
+.card-speaker__specializations {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 17px;
+  padding-bottom: 8px;
+  list-style: none;
+
+  & p {
+    margin-bottom: 8px;
+    margin-top: 8px;
+
+    @include vp-1023 {
+      margin-bottom: 13px;
+      margin-top: 16px;
+    }
+  }
+}
+
+.card-speaker__courses-title {
+  margin: 0;
+  padding: 0;
+  font-family: $ff-rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  @include vp-1023 {
+    padding-top: 2px;
+    padding-bottom: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.card-speaker__courses {
+  position: relative;
+  padding: 0;
+  padding-bottom: 17px;
+  margin: 0;
+  margin-bottom: 17px;
+  list-style: none;
+
+  @include vp-1023 {
+    padding-bottom: 23px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  li {
+    margin-top: 9px;
+    font-family: $ff-pt-sans;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    text-transform: none;
+    letter-spacing: normal;
+
+    @include vp-1023 {
+      margin-top: 12px;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+}
+
+.card-speaker__border-bottom {
+  border-bottom: 1px solid $color-very-light-grey;
+}
+
+.card-speaker__link {
+  font-family: $ff-rubik;
+  font-size: 13px;
+}
+
+.card-speaker__img {
+  img {
+    object-fit: cover;
+    object-position: top;
+    border-radius: 4px;
+    height: 400px;
+    width: 460px;
+  }
+
+  @include vp-1023 {
+    max-width: 360px;
+    margin-left: -24px;
+    margin-right: -24px;
+
+    img {
+      border-radius: 0;
+      object-fit: cover;
+    }
+  }
+}
+
+.speakers__bg {
+  position: absolute;
+  z-index: -1;
+
+  &--left {
+    top: 243px;
+    left: 301px;
+    transform: rotate(8deg);
+
+    @include vp-1439 {
+      top: 195px;
+      left: 86px;
+    }
+
+    @include vp-767 {
+      top: 133px;
+      left: -225px;
+    }
+
+    svg {
+      width: 1433px;
+      height: 955px;
+    }
+  }
+
+  &--right {
+    bottom: 331px;
+    right: -112px;
+
+    @include vp-1439 {
+      bottom: 375px;
+      right: -321px;
+    }
+
+    @include vp-1023 {
+      bottom: 705px;
+      right: -394px;
+    }
+
+    svg {
+      width: 887px;
+      height: 1010px;
+      fill: none;
+    }
+  }
+}

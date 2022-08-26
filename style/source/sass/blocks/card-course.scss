@@ -1,0 +1,155 @@
+.card-course {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-azure;
+  border-radius: 4px;
+  overflow: hidden;
+  user-select: none;
+  transition: all $trans-default;
+  min-height: 544px;
+  height: 100%;
+
+  @include vp-767 {
+    min-height: 472px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: $box-shadow;
+  }
+
+  a::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__img-wrapper {
+    img {
+      width: 360px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin: 0;
+    margin-bottom: 25px;
+    font-family: $ff-roboto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color-grey;
+
+    @include vp-1023 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__format {
+    margin-right: 6px;
+
+    &--blue {
+      color: $color-cornflower-blue;
+    }
+
+    &--red {
+      color: $color-light-coral;
+    }
+  }
+
+  &__text-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px 16px;
+
+    @include vp-1023 {
+      padding: 12px 16px 16px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: none;
+    letter-spacing: normal;
+
+    @include vp-1023 {
+      margin-bottom: 2px;
+      font-size: 17px;
+    }
+  }
+
+  &__description {
+    flex: 1 0 auto;
+    margin: 0;
+    margin-right: 60px;
+    font-size: 17px;
+    line-height: 24px;
+
+    @include vp-1023 {
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    @include vp-767 {
+      margin-right: 55px;
+    }
+  }
+
+  &__speakers {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid $color-whisper;
+
+    @include vp-767 {
+      margin-top: 0;
+    }
+  }
+
+  &__speaker {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 24px;
+
+    img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+
+  &__speaker:last-child {
+    margin-right: 0;
+  }
+
+  &__speaker-name {
+    margin: 0;
+    margin-left: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__link {
+    margin-top: 16px;
+    font-family: $ff-rubik;
+    font-size: 13px;
+  }
+}

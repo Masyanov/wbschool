@@ -1,0 +1,9 @@
+mixin whom(data)
+  section.whom
+    .container
+      h2.visually-hidden Для кого этот курс
+      ul.whom__list
+        each item in data
+          li.whom__item
+            +icon(item.icon.iconName, item.icon.iconWidth, item.icon.iconHeight)
+            p !{item.text}

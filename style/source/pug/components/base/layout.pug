@@ -1,0 +1,41 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang="ru")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content=contentDescription ? contentDescription : "Белая медведица — Учебный центр. Обучаем стоматологов")
+    //- генерируйте favicon тут - https://realfavicongenerator.net/
+    //- в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"
+    <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg">
+    //- используйте только для шрифта находящегося на первом экране
+    link(rel="preload", href="fonts/rubik-400.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/pt-sans-400.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/pt-serif-400.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/prata-400.woff2", as="font", crossorigin="anonymous")
+    link(rel="stylesheet", href="css/style.min.css")
+
+    if (map)
+      script(src="https://api-maps.yandex.ru/2.1/?apikey=740dac08-0083-45ca-888d-754437212178&lang=ru_RU" type="text/javascript")
+
+  body
+    +sprite()
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentUrl, currentUrlContacts)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods, currentUrl, contacts)
+
+    block modals
+
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")

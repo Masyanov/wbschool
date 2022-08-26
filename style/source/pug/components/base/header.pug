@@ -1,0 +1,45 @@
+mixin header(headerMods, currentUrl, currentUrlContacts)
+  header.header.header--nojs(class=headerMods)
+    .header__bg.header__bg--desktop
+      +icon("constellation", 2635, 1660).header__bg-img
+    .header__bg.header__bg--mobile.header__bg--mobile-big
+      +icon("constellation-mobile-big", 360, 56).header__bg-img
+    .header__bg.header__bg--mobile.header__bg--mobile-little
+      +icon("constellation-mobile-little", 116, 56).header__bg-img
+    .container
+      .main-nav
+        .main-nav__wrap
+          +logo(currentUrl, "header").logo--header
+          .main-nav__button-wrap
+            +link({href: "tel:+78123092738", text: "812 309&#8209;27&#8209;38"}).link--uppercase.main-nav__tel
+            button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", data-text-open="Открыть меню", data-text-close="Закрыть меню", aria-pressed="false")
+              span.main-nav__toggle-line.main-nav__toggle-line--top
+              span.main-nav__toggle-line.main-nav__toggle-line--center
+              span.main-nav__toggle-line.main-nav__toggle-line--bottom
+        nav.main-nav__list-wrapper.main-nav__list-wrapper--bottom
+          ul.main-nav__list.main-nav__list--bottom
+            each link, index in headerLinksBottom
+              li.main-nav__item
+                if (index === currentUrl)
+                  span.link.main-nav__link.is-active !{link.text}
+                else
+                  +link({href: link.href, text: link.text}).main-nav__link
+        .main-nav__list-wrapper.main-nav__list-wrapper--top
+          .main-nav__inner
+            ul.main-nav__list.main-nav__list--center.main-nav__list--top
+              each link in headerLinksTop
+                li.main-nav__item.main-nav__item--top
+                  if (link.text === "учебный центр")
+                    span.link.link--light.link--uppercase.main-nav__link.main-nav__link--top.is-active !{link.text}
+                  else
+                    +link({href: link.href, text: link.text}).link--light.link--uppercase.main-nav__link.main-nav__link--top
+            ul.main-nav__list.main-nav__list--top.main-nav__list--contacts
+              each link, index in headerLinksContacts
+                li.main-nav__item(class!=link.modifier ? link.modifier : null)
+                  if (index === currentUrlContacts)
+                    span.link.link--uppercase.main-nav__link.main-nav__link--contacts.is-active !{link.text}
+                  else
+                    +link({href: link.href, text: link.text}).link--light.link--uppercase.main-nav__link.main-nav__link--contacts
+        .main-nav__list-wrapper.main-nav__list-wrapper--social
+          .main-nav__list.main-nav__list--social
+            +social-links(socialLinks)

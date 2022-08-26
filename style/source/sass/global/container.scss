@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 $padding-container-desktop;
+
+  @include vp-1439 {
+    padding: 0 $padding-container-tablet;
+  }
+
+  @include vp-1023 {
+    padding: 0 $padding-container-mobile;
+  }
+
+  &--big-padding {
+    padding: 0 $padding-container-desktop-big;
+  }
+
+  &--no-padding {
+    padding: 0;
+
+    @include vp-1439 {
+      padding: 0;
+    }
+
+    @include vp-1023 {
+      padding: 0;
+    }
+  }
+
+  &--no-padding-mobile {
+    @include vp-1023 {
+      padding: 0;
+    }
+  }
+
+  &--no-padding-mobile-767 {
+    @include vp-767 {
+      padding: 0;
+    }
+  }
+}

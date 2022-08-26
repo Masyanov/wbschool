@@ -1,0 +1,146 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+
+  font-family: $ff-rubik;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 1px;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color $trans-default, box-shadow $trans-default;
+
+  svg {
+    margin-left: 4px;
+    width: 22px;
+    height: 22px;
+  }
+
+  &--fw-medium {
+    font-weight: 500;
+  }
+
+  &--fw-bold {
+    font-weight: 700;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--padding-13-30 {
+    padding: 13px 30px;
+  }
+
+  &--padding-11-40 {
+    padding: 11px 40px;
+  }
+
+  &--padding-13-74 {
+    padding: 13px 74px;
+  }
+
+  &--small {
+    padding: 8px 22px;
+  }
+
+  &--iris-blue {
+    color: $color-default-white;
+    background-color: $color-iris-blue;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-turquoise;
+      }
+    }
+  }
+
+  &--blue {
+    color: $color-default-white;
+    background-color: $color-deep-sky-blue;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-turquoise;
+      }
+    }
+  }
+
+  &--white-blue {
+    color: $color-iris-blue;
+    background-color: $color-default-white;
+  }
+
+  &--dark-blue {
+    color: $color-default-white;
+    background-color: $color-dodger-blue2;
+  }
+
+  &--light-gray {
+    color: $color-nero;
+    background-color: $color-azure;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: $color-red;
+      }
+
+      &:active {
+        color: $color-sunset-orange;
+      }
+    }
+
+    &:active {
+      color: $color-sunset-orange;
+    }
+  }
+
+  &--white {
+    color: $color-nero;
+    background-color: $color-default-white;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: $color-red;
+      }
+
+      &:active {
+        color: $color-sunset-orange;
+      }
+    }
+
+    &:active {
+      color: $color-sunset-orange;
+    }
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      box-shadow: $box-shadow;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

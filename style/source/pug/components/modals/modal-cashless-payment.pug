@@ -1,0 +1,90 @@
+mixin modal-cashless-payment()
+  .modal-payment.modal-payment--cashless
+    .modal-payment__wrapper(data-validate)
+      h2.modal-payment__title.title.title--h11 Данные для безналичной оплаты
+      form(action="#/" method="post")
+        .modal-payment__input-wrapper
+          +custom-input({
+            inputLabel: "Название компании",
+            inputType: "text",
+            inputId: "companyname",
+            minlength: "2",
+            inputError: "Введите название",
+          }).modal-payment__custom-input(data-validate-type="text")
+          +custom-input({
+            inputLabel: "ИНН",
+            inputType: "number",
+            inputId: "tin",
+            minlength: "10",
+            inputError: "Введите ИНН",
+          }).modal-payment__custom-input(data-validate-type="number")
+          +custom-input({
+            inputLabel: "КПП",
+            inputType: "number",
+            inputId: "kpp",
+            minlength: "9",
+            inputError: "Введите КПП",
+          }).modal-payment__custom-input(data-validate-type="number")
+          +custom-input({
+            inputLabel: "БИК",
+            inputType: "number",
+            inputId: "bik",
+            minlength: "9",
+            inputError: "Введите БИК",
+          }).modal-payment__custom-input(data-validate-type="number")
+          +custom-input({
+            inputLabel: "Название банка",
+            inputType: "text",
+            inputId: "bankname",
+            minlength: "2",
+            inputError: "Введите название",
+          }).modal-payment__custom-input(data-validate-type="text")
+          +custom-input({
+            inputLabel: "Расчетный счет",
+            inputType: "number",
+            inputId: "checkingaccount",
+            minlength: "20",
+            inputError: "Введите расчетный счет",
+          }).modal-payment__custom-input(data-validate-type="number")
+          +custom-input({
+            inputLabel: "Корр.&nbsp;счет",
+            inputType: "number",
+            inputId: "correspondaccount",
+            minlength: "20",
+            inputError: "Введите корр.&nbsp;счет",
+          }).modal-payment__custom-input(data-validate-type="number")
+          +custom-input({
+            inputLabel: "Юридический адрес",
+            inputType: "text",
+            inputId: "legaladdress",
+            minlength: "2",
+            inputError: "Введите адрес",
+          }).modal-payment__custom-input.modal-payment__custom-input--address(data-validate-type="text")
+          +custom-toggle({
+            inputLabel: "Я согласен (а) на обработку <a href=\"#\">персональных данных</a>&nbsp;и получение рекламной рассылки в соответствии с <a href=\"#\">положением об обработке персональных данных</a>",
+            inputType: "checkbox",
+            inputId: "checkbox",
+            inputName: "checkbox",
+          }).custom-toggle--checkbox.modal-payment__confidential(data-validate-type="checkbox")
+          fieldset.modal-payment__type-payment(data-validate-type="toggle-group").toggle-group
+            legend Способ оплаты
+            +custom-toggle({
+              inputLabel: "Банковской картой через Робокассу",
+              inputType: "radio",
+              inputId: "radio-3",
+              inputName: "radio-group-1",
+            }).custom-toggle--radio.modal-payment__custom-toggle(data-open-modal="payment")
+            +custom-toggle({
+              inputLabel: "Безналичный расчет (для юр. лиц)",
+              inputType: "radio",
+              inputId: "radio-4",
+              inputName: "radio-group-1",
+              inputChecked: "checked",
+            }).custom-toggle--radio.modal-payment__custom-toggle
+          +btn({
+            href: "",
+            text: "Оплатить",
+            type: "submit",
+            content: true,
+          }).modal-payment__btn.btn.btn--blue.btn--uppercase
+

@@ -1,0 +1,254 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 19px;
+  color: $color-whisper;
+  background-color: $color-sapphire;
+
+  @include vp-1023 {
+    padding-top: 24px;
+  }
+}
+
+.footer__wrapper {
+  display: flex;
+
+  @include vp-1023 {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-bottom: 45px;
+  border-bottom: 1px solid $color-white-opacity;
+  margin-bottom: 26px;
+
+  @include vp-1023 {
+    flex-direction: column;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 25px;
+    margin-bottom: 24px;
+  }
+}
+
+.footer__column {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+
+  @include vp-1439 {
+    width: 263px;
+  }
+
+  @include vp-1023 {
+    width: 360px;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer__clinic-name {
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  @include vp-1023 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.footer__adress {
+  max-width: 248px;
+  margin-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include vp-1023 {
+    max-width: 242px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.footer__email {
+  margin-bottom: 10px;
+  font-family: $ff-pt-sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include vp-1023 {
+    margin-bottom: 7px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.footer__tel {
+  font-family: $ff-rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $color-whisper;
+}
+
+.footer__title {
+  margin: 0;
+  margin-bottom: 6px;
+  font-family: $ff-rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  @include vp-1023 {
+    margin-bottom: 9px;
+  }
+}
+
+.footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 305px;
+
+  a {
+    padding: 2px 0;
+    color: $color-whisper;
+
+    @include vp-1023 {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  @include vp-1023 {
+    margin-bottom: 0;
+  }
+}
+
+.footer__item {
+  margin-bottom: 8px;
+
+  @include vp-1023 {
+    margin-bottom: 4px;
+  }
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @include vp-1023 {
+    padding-bottom: 13px;
+    flex-direction: column;
+    align-items: normal;
+    max-width: 312px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.footer__wrapper-agreement {
+  margin-right: 105px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1023 {
+    max-width: 291px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.footer__agreement {
+  max-width: 124px;
+  color: $color-whisper;
+  font-family: $ff-roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  margin-left: 43px;
+
+  @include vp-1023 {
+    margin-left: 0;
+  }
+}
+
+.footer__official {
+  padding-bottom: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+
+  @include vp-1439 {
+    padding: 0;
+  }
+
+  @include vp-1023 {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+}
+
+.footer__official-link {
+  display: flex;
+  color: $color-whisper;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-persian-red;
+    }
+
+    &:active {
+      color: $color-sunset-orange;
+    }
+  }
+
+  &:active {
+    color: $color-sunset-orange;
+  }
+}
+
+.footer__author {
+  width: 131px;
+  margin-left: 10px;
+  font-family: $ff-roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}

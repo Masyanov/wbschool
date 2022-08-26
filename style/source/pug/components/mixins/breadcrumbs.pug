@@ -1,0 +1,10 @@
+mixin breadcrumbs(list)
+  ul(class!=attributes.class).breadcrumbs
+    li.breadcrumbs__item
+      +link({href: "index.html", text: "Главная"}).link--opacity
+    each item, i in list
+      li.breadcrumbs__item
+        if i < list.length - 1
+          +link({href: item.href, text: item.text}).link--opacity
+        else
+          span !{item.text}

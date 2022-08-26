@@ -1,0 +1,45 @@
+.logo {
+  display: flex;
+  transition: opacity $trans-default;
+
+  &--header {
+    svg {
+      width: 291px;
+      max-width: 291px;
+      height: 58px;
+
+      @include vp-1439 {
+        width: 213px;
+        height: 40px;
+      }
+
+      @include vp-1023 {
+        margin-left: -4px;
+        width: 172px;
+        height: 33px;
+      }
+
+      @include vp-359 {
+        width: 145px;
+      }
+    }
+  }
+
+  &--footer {
+    svg {
+      width: 128px;
+      height: 38px;
+    }
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &[href]:hover,
+    &[href]:focus {
+      opacity: 0.6;
+    }
+
+    &[href]:active {
+      opacity: 0.3;
+    }
+  }
+}

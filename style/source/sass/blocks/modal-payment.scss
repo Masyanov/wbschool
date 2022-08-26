@@ -1,0 +1,161 @@
+.modal-payment {
+  .modal-payment__input-wrapper {
+    //padding: 0 108px 0;
+    //padding: 0 0 32px;
+
+    @include vp-767 {
+      //padding: 0 0 32px;
+      //padding: 0 0 47px;
+    }
+  }
+
+  .modal-payment__custom-input {
+    width: 100%;
+    //margin-bottom: 16px;
+    margin-bottom: 24px;
+
+    @include vp-767 {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.modal-payment__btn {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  font-weight: 500;
+  padding-top: 9px;
+  padding-bottom: 9px;
+
+  @include vp-767 {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  &::after,
+  &::before {
+    width: 0;
+  }
+}
+
+.modal-payment__confidential {
+  margin-top: 12px;
+  padding-top: 12px;
+
+  @include vp-767 {
+    margin-top: 5px;
+    padding-top: 12px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: $color-grey;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+
+  a {
+    color: $color-black-pearl;
+    text-decoration: underline;
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .custom-toggle__label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+
+.modal-payment__title {
+  padding-left: 108px;
+  padding-right: 108px;
+  text-transform: none;
+  font-weight: 700;
+  padding: 0;
+  letter-spacing: 0;
+
+  @include vp-767 {
+    padding: 0;
+    letter-spacing: 0;
+  }
+}
+
+.modal-payment__confidential {
+  width: 100%;
+  margin-bottom: 0;
+
+  @include vp-767 {
+    margin-bottom: 0;
+  }
+}
+
+.modal-payment__type-payment {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  border:0 none;
+  margin-top: 4px;
+
+  @include vp-767 {
+    margin-top: 4px;
+  }
+
+  span {
+    margin-bottom: 10px;
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
+.modal-payment--cashless {
+  .modal-payment__confidential {
+    //margin-top: 10px;
+    //padding-top: 5px;
+    //margin-bottom: 0;
+
+    @include vp-767 {
+      //margin-top: 0;
+    }
+  }
+
+  .modal-payment__custom-input {
+    //padding-top: 0;
+
+    @include vp-767 {
+      //margin-bottom: 34px;
+    }
+
+    &--address {
+      @include vp-767 {
+        //margin-bottom: 21px;
+      }
+    }
+  }
+
+  .modal-payment__title {
+    //margin-bottom: 10px;
+    @include vp-767 {
+      //margin-bottom: 14px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "О нас — Белая медведица" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    +freeMaterials({
+      breadcrumbsList: [
+        {
+          text: `Индивидуальное обучение`,
+          href: `#`,
+        },
+      ]
+    }, cardMaterials)
+

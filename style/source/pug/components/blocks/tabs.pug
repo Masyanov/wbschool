@@ -1,0 +1,22 @@
+mixin tabs()
+  section.tabs(data-tabs="parent")
+    +icon("background-image", 1100, 1166).background-image
+    .container
+      .courses__tabs(style="display:none")
+        .tabs__scroll-wrapper
+          .tabs__controls(data-tabs="controls")
+            button.tabs__control(type="button", data-tabs="control") курсы для стоматологов
+            button.tabs__control(type="button", data-tabs="control") мастер-классы для стоматологов
+            button.tabs__control(type="button", data-tabs="control") курсы для управляющих
+      .tabs__content(data-tabs="content")
+        .tabs__element(data-tabs="element")
+          h2.title.title--h2.title--center курсы для стоматологов
+          +courses-block(cardsContent3)
+          .master-classes
+            h2.title.title--h2.title--center мастер-классы для&nbsp;стоматологов
+            .master-classes__wrapper
+              +courses-block(cardsContent4)
+          .master-classes
+            h2.title.title--h2.title--center курсы для управляющих и&nbsp;главврачей
+            .master-classes__wrapper
+              +courses-block(cardsContent5)

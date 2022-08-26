@@ -1,0 +1,16 @@
+mixin articles(data, content)
+  section.materials
+    .container
+      +breadcrumbs(data.breadcrumbsList)
+      .materials__wrapper
+        +icon("background-image", 1100, 1166).background-image
+        h1.title.title--h1.title--center !{content.title.text}
+        ul.materials-block
+          each item in content.cards
+            if(item.isBig)
+              li.materials-block__item(class=item.mod ? `materials-block__item--${item.mod}` : null)
+                +card-article(item)
+            else
+              li.materials-block__item
+                +card-article(item)
+        +pagination()

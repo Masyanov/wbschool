@@ -1,0 +1,94 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+
+  border: none;
+  border-radius: 0;
+  background-color: $color-transparent;
+
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: color $trans-default;
+
+  svg {
+    margin-left: 4px;
+    width: 22px;
+    height: 22px;
+  }
+
+  &--letter-spacing {
+    letter-spacing: 1px;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--blue {
+    color: $color-dodger-blue;
+  }
+
+  &--decoration {
+    text-decoration-line: underline;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-red;
+    }
+
+    &:active {
+      color: $color-sunset-orange;
+    }
+  }
+
+  &:active {
+    color: $color-sunset-orange;
+  }
+
+  &--light {
+    color: $color-whisper;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: $color-persian-red;
+      }
+
+      &:active {
+        color: $color-sunset-orange;
+      }
+    }
+
+    &:active {
+      color: $color-sunset-orange;
+    }
+  }
+
+  &--opacity {
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: currentColor;
+        opacity: 0.7;
+      }
+
+      &:active {
+        color: currentColor;
+        opacity: 0.5;
+      }
+    }
+
+    &:active {
+      color: currentColor;
+      opacity: 0.5;
+    }
+  }
+}

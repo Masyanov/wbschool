@@ -1,0 +1,60 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 45px;
+  font-family: $ff-rubik;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: $color-gray;
+
+  @include vp-1023 {
+    margin-bottom: 31px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &--white {
+    margin-bottom: 0;
+    color: $color-white-smoke;
+  }
+
+  &--margin {
+    margin-bottom: 37px;
+  }
+}
+
+.breadcrumbs__item {
+  position: relative;
+  padding-right: 13px;
+
+  &::after {
+    position: absolute;
+    content: "/";
+    top: 0;
+    right: 0;
+    margin-right: 5px;
+    color: currentColor;
+
+    @include vp-1023 {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  &:last-child::after {
+    content: "";
+  }
+
+  &:last-child > a {
+    pointer-events: none;
+  }
+}

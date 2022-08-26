@@ -1,0 +1,15 @@
+mixin video(data={}, imgData)
+  - const {youtubeId="", width="", height="", title=""} = data
+    .video(class!=attributes.class)
+      iframe(width=data.width height=data.height src=`https://www.youtube.com/embed/${youtubeId}?enablejsapi=1` title=data.title allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;", allowfullscreen)
+      .video__cover
+        +picture(
+                imgData.img.path,
+                imgData.img.image,
+                imgData.img.format,
+                imgData.img.width,
+                imgData.img.height,
+                imgData.img.altText
+                )
+      button.video__btn(type="button", aria-label="Начать воспроизведение")
+        +icon("icon-play", "44", "44")

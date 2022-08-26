@@ -1,0 +1,39 @@
+mixin speaker(list, data)
+  section.speaker
+    .speaker__bg
+      +icon("big-dipper", 1451, 972)
+    .container
+      +breadcrumbs(list.breadcrumbsList)
+      section.speaker__info.speaker-info
+        .speaker-info__main
+          .speaker-info__img
+            +picture("content", "sreaker-main", "jpg", 560, 560, "Фото спикера")
+          .speaker-info__about
+            h1.title.speaker-info__title!=data.name
+            +social-links(data.socialLinks).speaker-info__social-links
+            p.speaker-info__position!=data.position
+            .speaker-info__text-wrapper
+              each item in data.description
+                p!=item
+        .speaker-info__education
+          each item in data.education
+            section.speaker-info__education-block
+              h2.speaker-info__education-title!=item.title
+              ul.speaker-info__education-list
+                each data in item.list
+                  li.speaker-info__education-item
+                    time(datetime=data.year).speaker-info__education-data!=data.year
+                    p.speaker-info__education-name!=data.name
+              if item.link
+                +link({href: "#", text: item.link}).link.link--blue.link--uppercase.link--letter-spacing.speaker-info__link
+    +video-slider(data.speakerVideo).speaker__video
+    section.speaker__courses
+      .speaker__courses-bg
+        +icon("big-dipper", 1451, 972)
+      .container
+        h2.title.title--h2.speaker__courses-title Ведет курсы
+        p.speaker__courses-description Обучает хирургов-стоматологов с&nbsp;2015 года
+        ul.speaker__courses-list
+          each item in data.courses
+            li.speaker__courses-item
+              +card-course(item)

@@ -1,0 +1,15 @@
+mixin custom-radio(data={}, i="")
+  - const {mods='', label, note, icon, id, name, check} = data
+
+  .custom-radio(class!=attributes.class class=mods)
+    input.visually-hidden(type="radio" name=(name + i) id=(id + i) checked=check&&check)
+    label(for=(id + i))=label
+
+      if block
+        block
+
+      if note
+        span.custom-radio__note!= note
+
+      if icon
+        +icon(icon.name, icon.width, icon.height).custom-radio__icon

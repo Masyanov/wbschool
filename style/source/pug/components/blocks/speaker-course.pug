@@ -1,0 +1,16 @@
+mixin speaker-course(data)
+  section.speaker-course
+    .container.container--big-padding
+      .speaker-course__bg
+        +icon("little-bear-scale", 936, 1012)
+      h2.title.title--h2.title--center.speaker-course__title Спикер
+      p.speaker-course__speaker-name !{data.nameSpeaker}
+      .speaker-course__img
+        +picture(data.img.folder, data.img.name, data.img.format, data.img.width, data.img.height, data.img.alt)
+      .speaker-course__description
+        each item in data.description
+          .speaker-course__description-wrap
+            p.speaker-course__description-text !{item.text}
+            ul.speaker-course__list
+              each el in item.aboutTheDoctor
+                li.speaker-course__item !{el}

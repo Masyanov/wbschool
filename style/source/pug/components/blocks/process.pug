@@ -1,0 +1,20 @@
+mixin process()
+  section.process
+    .container.container--no-padding
+      h2.title.title--h2.title--center Как проходит обучение
+      p.process__text Преподаем в уникальном формате — лекции и открытые операции
+      .process__list-wrapper
+        ul.process__list.process__list--offline
+          +list(processContent)
+        ul.process__list.process__list--online
+          +list(processContent2)
+      .process__slider
+        .process__slides.swiper-wrapper.slider
+          each slide in processSlides
+            .process__slide.process__slide.swiper-slide(class=slide.mod ? `process__slide--${slide.mod}` : null)
+              +picture(slide.img.path, slide.img.image, slide.img.format, slide.img.width, slide.img.height, slide.img.altText)
+        .process__slider-buttons
+          +btn({iconName: "arrow-slider", iconWidth: 12, iconHeight: 24}).process__slider-button.process__slider-button--prev
+          +btn({iconName: "arrow-slider", iconWidth: 12, iconHeight: 24}).process__slider-button.process__slider-button--next
+        .process__pagination
+          .process__slider-pagination.swiper-scrollbar

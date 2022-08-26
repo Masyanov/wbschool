@@ -1,0 +1,11 @@
+mixin schedule-course(data)
+  section.schedule-course
+    .container.container--big-padding
+      h2.title.title--h2.title--center Расписание курса
+      ul.schedule-course__list
+        each item in data
+          li.schedule-course__item(class=item.modify)
+            span.schedule-course__time !{item.time}
+            span.schedule-course__text
+              each el in item.text
+                span(class=el.modify) !{el.text}

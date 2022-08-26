@@ -1,0 +1,110 @@
+-
+  const page404Cards = [
+      {
+        link: "#",
+        img: {
+          name: "course-3",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        format: "Oфлайн",
+        start: "19, 20 марта",
+        title: "Протезирование молочек и&nbsp;постоянных",
+        description: "Практический курс для детских стоматологов с&nbsp;видеотрансляцией операций",
+        speakers: [
+          {
+            name: "Варвара<br>Висленко",
+            img: {
+              name: "image-author-1",
+              width: 48,
+              height: 48,
+              alt: "Фото спикера",
+            },
+          },
+          {
+            name: "Ксения<br>Акмуллина",
+            img: {
+              name: "image-author-5",
+              width: 48,
+              height: 48,
+              alt: "Фото спикера",
+            },
+          },
+        ],
+      },
+      {
+        link: "#",
+        img: {
+          name: "course-1",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        format: "Oнлайн",
+        start: "старт в&nbsp;любой момент",
+        title: "Мастер имплантологии, 1-й цикл",
+        description: "Это уникальный курс, который закроет все вопросы, связанные с&nbsp;имплантацией",
+        speakers: [
+          {
+            name: "Иван<br>Курдюмов",
+            img: {
+              name: "image-author-4",
+              width: 48,
+              height: 48,
+              alt: "Фото спикера",
+            },
+          },
+        ],
+      },
+      {
+        link: "#",
+        img: {
+          name: "course-2",
+          width: 360,
+          height: 200,
+          alt: "",
+        },
+        format: "Oфлайн",
+        start: "12 февраля",
+        title: "Мастер удаления зубов",
+        description: "Офис-курс для стоматологов с&nbsp;открытыми операциями. Опыт 12-ти лет за&nbsp;один день!",
+        speakers: [
+          {
+            name: "Иван<br>Курдюмов",
+            img: {
+              name: "image-author-4",
+              width: 48,
+              height: 48,
+              alt: "Фото спикера",
+            },
+          },
+        ],
+      },
+    ]
+
+mixin page-404()
+  .page-404
+    .container
+      .page-404__content
+        span.page-404__message Ошибка 404
+        h1.title.title--h9 К&nbsp;сожалению, такой страницы нет
+        p.page-404__info Она удалена или в&nbsp;адресе есть ошибка.
+        p.page-404__info.page-404__info--desktop
+          | Возможно вы искали один из&nbsp;наших курсов. Перейдите
+          =" "
+          a.page-404__link.link(href="index.html") на&nbsp;главную страницу
+          =" "
+          | или посмотрите наши популярные курсы ниже:
+        p.page-404__info.page-404__info--mobile Возможно вы искали один из&nbsp;наших курсов.
+        p.page-404__info.page-404__info--mobile  Перейдите
+          =" "
+          a.page-404__link.link(href="index.html") на&nbsp;главную страницу
+          =" "
+          | или посмотрите наши популярные курсы ниже:
+      ul.page-404__list
+          each item in page404Cards
+            li.page-404__item
+              +card-course(item)
+      .page-404__btn
+        +btn({href: "#",text: "Посмотреть все курсы", iconName: "arrow", iconWidth: 22, iconHeight: 22}).btn--light-gray.btn--uppercase.btn--padding-13-30

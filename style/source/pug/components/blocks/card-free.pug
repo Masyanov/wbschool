@@ -1,0 +1,35 @@
+mixin cardFree(data, content)
+  section.card-free
+    .container
+      +breadcrumbs(data.breadcrumbsList)
+      div.card-free__wrapper
+        +icon("background-image", 1100, 1166).background-image
+        .card-free__image-wrapper
+          +picture(content.folder, content.name, content.format, content.width, content.height, content.alt)
+
+
+        article.card-free__article
+          h1.title--h10 !{content.title}
+          p.card-free__article-description !{content.description}
+          div.card-free__social-links
+            h2.title--h11 Куда вам отправить файл?
+            div.card-free__buttons
+              +btn({
+                sLink: true,
+                href: "#",
+                text: "telegram&nbsp;",
+                iconName: "icon-telegram",
+                iconWidth: 26,
+                iconHeight: 23}).card-free__buttons-bg-tg
+              +btn({
+                sLink: true,
+                href: "#",
+                text: "вконтакте&nbsp;",
+                iconName: "icon-vkontakte",
+                iconWidth: 28,
+                iconHeight: 17}).card-free__buttons-bg-vk
+          div.card-free__info
+            each item in content.list
+              h3.title--h12 !{item.title}
+              div.card-free__info-description
+                p !{item.description}

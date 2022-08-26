@@ -1,0 +1,41 @@
+mixin program-course(data)
+  section.program-course
+    .container
+      .program-course__bg
+        +icon("bears-scale", 1421, 1316)
+      .program-course__wrapper
+        h2.title.title--h2.title--center.program-course__title Программа курса
+        if (data.program)
+          ul.program-course__list.program-course__list--program
+            each item in data.program
+              li.program-course__program-item
+                h3.title.title--h3.program-course__program-title !{item.title}
+                p
+                  b!=item.bold
+                  !=item.text
+        if (!data.program)
+          .program-course__inner.program-course__inner--border-top
+            each item in data.detailed
+              .program-course__detailed
+                if (item.title)
+                  h3.title.title--h3 !{item.title}
+                ul.program-course__list.program-course__list--detailed
+                  each el in item.list
+                    li.program-course__element
+                      h4.title.title--h7 !{el.title}
+                      ul.program-course__list.program-course__list--sublist
+                        each i in el.item
+                          li.program-course__subitem !{i}
+        else
+          .program-course__inner
+            each item in data.detailed
+              .program-course__detailed
+                if (item.title)
+                  h3.title.title--h3 !{item.title}
+                ul.program-course__list.program-course__list--detailed
+                  each el in item.list
+                    li.program-course__element
+                      h4.title.title--h7 !{el.title}
+                      ul.program-course__list.program-course__list--sublist
+                        each i in el.item
+                          li.program-course__subitem !{i}

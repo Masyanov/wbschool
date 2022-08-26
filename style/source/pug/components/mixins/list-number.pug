@@ -1,0 +1,8 @@
+mixin list-number(data, mod)
+  each item in data
+    li.item(class=mod ? `item--${mod}` : null)
+      if(item.number)
+        p
+          span.item__number!=item.number
+          span=item.numberText
+      | !{item.text}

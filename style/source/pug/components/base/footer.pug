@@ -1,0 +1,35 @@
+mixin footer(footerMods, currentUrl, contacts)
+  footer.footer(class=footerMods)
+    .container
+      ul.footer__top
+        li.footer__column
+          h3.footer__title контакты
+          p.footer__clinic-name !{contacts.clinicName}
+          address.footer__adress
+            p !{contacts.address.city}
+            p !{contacts.address.address}
+            p !{contacts.address.businessСenter}
+          +link({href: `mailto:${contacts.email.email}`, text: contacts.email.email}).link--light.footer__email
+          +link({href: `tel:${contacts.footerPhone.content}`, text: contacts.footerPhone.text}).link--light.footer__tel
+        li.footer__column
+          h3.footer__title Курсы и мастер классы
+          ul.footer__list
+            each item in coursesList
+              li.footer__item
+                +link({href: item.href, text: item.link}).link--light
+        li.footer__column
+          h3.footer__title Статьи
+          ul.footer__list
+            each item in articlesList
+              li.footer__item
+                +link({href: item.href, text: item.link}).link--light
+
+      .footer__bottom
+        .footer__wrapper-agreement
+          +logo(currentUrl, "footer").logo--footer
+          +link({href: "agreement.html", text: "Пользовательское соглашение"}).link--light.footer__agreement
+        +social-links(socialLinks)
+        .footer__official
+          a(href = author.href, target="_blank", rel = "nofollow noopener noreferrer").footer__official-link
+            +icon(author.authorlogo.name, author.authorlogo.width,author.authorlogo.height)
+            .footer__author !{author.made}

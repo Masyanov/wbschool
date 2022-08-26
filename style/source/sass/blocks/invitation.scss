@@ -1,0 +1,81 @@
+.invitation {
+  padding-top: 85px;
+  padding-bottom: 93px;
+
+  border-top: 1px solid $color-whisper;
+
+  @include vp-1439 {
+    padding-top: 37px;
+    border-top: none;
+  }
+
+  @include vp-1023 {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    top: -60px;
+    left: 100px;
+    z-index: -1;
+
+    width: 1451px;
+    height: 972px;
+
+    fill: none;
+
+    @include vp-1439 {
+      top: -10px;
+      left: -120px;
+    }
+
+    @include vp-1023 {
+      top: -35px;
+      left: -100px;
+    }
+  }
+
+  .title {
+    margin-bottom: 43px;
+
+    @include vp-1023 {
+      margin-bottom: 23px;
+      padding-left: $padding-container-mobile;
+      padding-right: $padding-container-mobile;
+    }
+  }
+
+  &__text-block {
+    margin-top: 32px;
+
+    column-count: 2;
+    column-gap: 40px;
+
+    @include vp-1023 {
+      column-count: 1;
+
+      margin-top: 25px;
+      padding-left: $padding-container-mobile;
+      padding-right: $padding-container-mobile;
+    }
+  }
+
+  p {
+    margin: 0 0 6px;
+
+    font-size: 18px;
+    line-height: 24px;
+    break-inside: avoid;
+
+    &:first-child {
+      font-family: $ff-pt-serif;
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+}

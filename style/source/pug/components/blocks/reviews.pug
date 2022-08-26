@@ -1,0 +1,19 @@
+mixin reviews(data)
+  section.reviews
+    .container.container--no-padding
+      h2.title.title--h2.title--center.reviews__title Отзывы
+      .reviews__slider.swiper.slider(data-reviews-slider)
+        .reviews__buttons.slider__buttons
+          button.slider__button.slider__button--prev
+            +icon("arrow-slider", 12, 26)
+          button.slider__button.slider__button--next
+            +icon("arrow-slider", 12, 26)
+        ul.reviews__list.swiper-wrapper.slider__wrapper
+          each item in data
+            li.reviews__item.swiper-slide.slider__slide
+              .reviews__block
+                +video({youtubeId: item.video, title: "видео"}, item).video--max
+                .reviews__inner
+                  p.reviews__text !{item.text}
+                  p.reviews__author !{item.author}
+        .reviews__pagination.slider__pagination.slider__pagination--bullets.swiper-pagination

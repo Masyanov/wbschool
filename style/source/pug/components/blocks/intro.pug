@@ -1,0 +1,20 @@
+-
+  const introVideoCover = {
+    img: {
+      path: "content",
+      image: "intro-video-cover",
+      format: "jpg",
+      width: "740",
+      height: "752",
+      altText: "обложка для видео",
+    }
+  }
+
+mixin intro()
+  section.intro
+    .container.container--no-padding
+      h1.visually-hidden Белая медведица — учебный центр для стоматологов.
+      .intro__content
+        h2.title Обучаем стоматологов. Проводим операции в&nbsp;прямом эфире
+        p.intro__content-text Лекции и&nbsp;прямые эфиры&nbsp;&mdash; это наш уникальный метод обучения. Подача материала максимально наглядная, а&nbsp;ваше обучение&nbsp;&mdash; эффективное. Выберите курс и&nbsp;приходите к&nbsp;нам учиться.
+      +video({youtubeId: "5Rq2x637z38", title: "видео"}, introVideoCover)

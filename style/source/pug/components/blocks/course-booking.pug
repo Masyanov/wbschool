@@ -1,0 +1,34 @@
+mixin course-booking(data)
+  section.course-booking
+    .container.container--big-padding
+      +icon("bears", 1468, 2423).course-booking__bg
+      h2.title.title--h2.title--center.course-booking__title Забронируйте место на курсе
+      p.course-booking__text !{data.text}
+      .course-booking__wrapper
+        .course-booking__course
+          h3.title.title--h5.course-booking__subtitle Курс
+          .course-booking__details
+            .course-booking__wrap
+              h4.title.title--h8.course-booking__details-title Курс
+              p.course-booking__details-text !{data.course.title}
+            .course-booking__wrap
+              h4.title.title--h8.course-booking__details-title Старт курса
+              p.course-booking__details-text !{data.course.date}
+            .course-booking__wrap
+              h4.title.title--h8.course-booking__details-title Спикеры
+              .course-booking__inner
+                +picture(data.course.speaker.img.folder, data.course.speaker.img.name, data.course.speaker.img.format, data.course.speaker.img.width, data.course.speaker.img.height, data.course.speaker.img.alt)
+                p.course-booking__details-speaker !{data.course.speaker.name}
+        .course-booking__price
+          .course-booking__price-wrap
+            h3.title.title--h5.course-booking__subtitle Цена за Все 3 цикла
+            +course-booking-card(courseBookingCard.allCycle)
+          .course-booking__price-wrap
+            h3.title.title--h5.course-booking__subtitle Цена за Цикл 1
+            +course-booking-card(courseBookingCard.cycle1)
+          .course-booking__price-wrap
+            h3.title.title--h5.course-booking__subtitle Цена за Цикл 2
+            +course-booking-card(courseBookingCard.cycle2)
+          .course-booking__price-wrap
+            h3.title.title--h5.course-booking__subtitle Цена за Цикл 3
+            +course-booking-card(courseBookingCard.cycle3)

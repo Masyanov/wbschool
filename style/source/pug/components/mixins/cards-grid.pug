@@ -1,0 +1,5 @@
+mixin cards-grid(data, mod)
+  ul.cards-grid&attributes(attributes)
+    each item in data
+        li.cards-grid__item(class = mod)
+          +card-article(item)

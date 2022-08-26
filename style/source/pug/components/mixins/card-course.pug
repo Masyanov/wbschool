@@ -1,0 +1,18 @@
+mixin card-course(data)
+  - const formatMod = (data.format==="Oнлайн") ? "blue" : "red"
+  article.card-course&attributes(attributes)
+    .card-course__img-wrapper
+      +picture("content/card", data.img.name, "jpg", data.img.width, data.img.height, data.img.alt)
+    .card-course__text-content
+      p.card-course__info
+        span.card-course__format(class=`card-course__format--${formatMod}`)!=data.format
+        span.card-course__start!=data.start
+      a(href=data.link)
+        h3.title.card-course__title!=data.title
+      p.card-course__description!=data.description
+      ul.card-course__speakers
+        each item in data.speakers
+          li.card-course__speaker
+            +picture("content", item.img.name, "jpg", item.img.width, item.img.height, item.img.alt)
+            p.card-course__speaker-name!=item.name
+      +link({href: data.link, text: "Подробнее о курсе", iconName: "arrow", iconWidth: 16, iconHeight: 9}).link.link--blue.link--uppercase.link--letter-spacing.card-course__link

@@ -1,0 +1,10 @@
+mixin list(data, mod)
+  each item in data
+    li.item-list(class=mod ? `item--${mod}` : null)
+      if(item.info)
+        .item-list__top
+          span.item-list__info(class=item.color ? `item-list__info--${item.color}` : null)=item.info
+          h3.title.title--h6=item.title
+      else
+        h3.title.title--h6=item.title
+      p.item-list__text!=item.text

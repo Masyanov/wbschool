@@ -1,0 +1,120 @@
+.course-booking {
+  padding-top: 85px;
+  padding-bottom: 68px;
+
+  @include vp-1023 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    top: -340px;
+    left: 45px;
+    z-index: -1;
+
+    width: 1000px;
+    height: 2423px;
+
+    fill: none;
+
+    @include vp-1439 {
+      left: -185px;
+    }
+  }
+
+  &__title {
+    @include vp-1023 {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 55px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+
+    @include vp-1023 {
+      margin-bottom: 21px;
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 40px;
+
+    @include vp-1023 {
+      grid-template-columns: none;
+      gap: 28px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__details {
+    padding: 28px 28px 53px;
+
+    background-color: $color-azure;
+    border-radius: 4px;
+
+    @include vp-1023 {
+      padding-bottom: 6px;
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 24px;
+  }
+
+  &__details-title {
+    color: $color-iris-blue;
+  }
+
+  &__details-text {
+    margin: 0;
+
+    font-family: $ff-pt-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+
+    img {
+      margin-right: 11px;
+
+      width: 48px;
+      height: 48px;
+
+      border-radius: 4px;
+      object-fit: cover;
+    }
+  }
+
+  &__details-speaker {
+    margin: 0;
+    line-height: 20px;
+  }
+
+  &__price-wrap {
+    margin-bottom: 40px;
+
+    @include vp-1023 {
+      margin-bottom: 28px;
+    }
+  }
+}

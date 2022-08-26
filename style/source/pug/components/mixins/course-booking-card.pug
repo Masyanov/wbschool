@@ -1,0 +1,18 @@
+mixin course-booking-card(data)
+  ul.course-booking-card
+    each item in data
+      li.course-booking-card__item(class!=item.modifier ? item.modifier : null)
+        .course-booking-card__wrap
+          p.course-booking-card__title пакет
+          p.course-booking-card__name !{item.structure}
+        .course-booking-card__wrap
+          p.course-booking-card__title Осталось мест
+          .course-booking-card__inner
+            span.course-booking-card__seats-left !{item.seatsLeft}
+            span.course-booking-card__was-seats !{` из ${item.wasSeats}`}
+        .course-booking-card__wrap
+          p.course-booking-card__title пакет
+          .course-booking-card__inner
+            p.course-booking-card__new-price !{`${item.newPrice} ₽`}
+            p.course-booking-card__old-price !{`${item.oldPrice} ₽`}
+        +btn({text: "Записаться"}).btn--blue.btn--uppercase.btn--fw-medium
